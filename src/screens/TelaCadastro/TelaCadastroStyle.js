@@ -1,135 +1,50 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
+// simplifiquei os estilos
 export const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    backgroundColor:'#3E5DFF' ,
-    padding: 15,
-   
-    
-    
+    backgroundColor: "#3E5DFF",
   },
-  textInputNome:{
-    width: '100%',
-    height: '6%',
-    backgroundColor: 'whitesmoke',
-    position: 'absolute',
-    top: '15%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    paddingLeft: 15,
-      
-    
-     
+  formWrapper: {
+    flex: 1,
+    justifyContent: "space-between",
   },
-  textInputEmail:{
-    width: '100%',
-    height: '6%',
-    backgroundColor: 'whitesmoke',
-    position: 'absolute',
-    top: '23%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    paddingLeft: 15,
-    
-    
+  form: {
+    gap: 16,
+    padding: 16,
   },
-  textInputTelefone:{
-    width: '100%',
-    height: '6%',
-    backgroundColor: 'whitesmoke',
-    position: 'absolute',
-    top: '31%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    paddingLeft: 15,
-    
+  formItem: {
+    gap: 4,
   },
-  textInputSenha:{
-    width: '100%',
-    height: '6%',
-    backgroundColor: 'whitesmoke',
-    position: 'absolute',
-    top: '39%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    paddingLeft: 15,
-    
+  input: {
+    backgroundColor: "white",
+    borderRadius: 24,
+    height: 48,
+    paddingLeft: 16,
   },
-  textInputConfirmar:{
-    width: '100%',
-    height: '6%',
-    backgroundColor: 'whitesmoke',
-    position: 'absolute',
-    top: '47%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    paddingLeft: 15,
-    
+  inputIfError: {
+    borderWidth: 1,
+    borderColor: "#ff375b",
   },
-  textInputCpf:{
-    width: '100%',
-    height: '6%',
-    backgroundColor: 'whitesmoke',
-    position: 'absolute',
-    top: '55%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    paddingLeft: 15,
-    
+  inputErrorMessage: {
+    // eu recomendaria mudar alguma das cores, uma vez que o texto vermelho não fica muito bem visível
+    color: "red",
   },
-  textInputCep:{
-    width: '100%',
-    height: '6%',
-    backgroundColor: 'whitesmoke',
-    position: 'absolute',
-    top: '63%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    paddingLeft: 15,
-    
+  buttonWrapper: {
+    justifyContent: "center",
+    padding: 24,
   },
-  textInputLogradouro:{
-    width: '100%',
-    height: '6%',
-    backgroundColor: 'whitesmoke',
-    position: 'absolute',
-    top: '71%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    paddingLeft: 15,
-    
+  button: {
+    backgroundColor: "white",
+    width: "100",
+    borderRadius: 24,
+    height: 48,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  textInputCargo:{
-    width: '100%',
-    height: '6%',
-    backgroundColor: 'whitesmoke',
-    position: 'absolute',
-    top: '79%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    paddingLeft: 15,
-    
+  buttonText: {
+    fontWeight: "bold",
+    color: "#3E5DFF",
   },
-  botaoCadastrar: {
-    width: '100%',
-    height: '8%',
-    position: 'absolute',
-    top: '90%',
-    alignSelf: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 30,
-    backgroundColor: 'whitesmoke',
-    elevation: 10,
-    borderWidth: 3, // Adiciona uma borda
-    borderColor: 'grey', // Cor da borda
-    
-  },
-  labelError:{
-    alignSelf: 'flex-start',
-    color: '#ff375b',
-    marginBottom: 8,
-
-  }
 });
