@@ -12,12 +12,12 @@ export default function TelaCadastro() {
       .string()
       .email("Digite um email válido")
       .required("informe seu email"),
-    // o campo é definido como telefone, mas foi usado celular noo formulário, teve de ser mudado
+    // o campo é definido como telefone, mas foi usado celular noo formulário, deve de ser mudado
     telefone: yup
       // o tipo estava em number, mas qualquer coisa em um input de texto deve ser tratado como texto
       .string()
       .min(9, "Digite um número válido")
-      .required("Digite um número válido"),
+      .required("Digite seu número"),
     senha: yup
       .string()
       .min(6, "A senha deve ter no mínimo 6 caracteres")
@@ -102,7 +102,7 @@ export default function TelaCadastro() {
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput
                   style={[styles.input, errors.celular && styles.inputIfError]}
-                  placeholder="Celular"
+                  placeholder="Telefone"
                   onChangeText={onChange}
                   onBlur={onBlur}
                   value={value}
@@ -163,6 +163,9 @@ export default function TelaCadastro() {
             )}
           </View>
         </View>
+
+
+        
 
         <View style={styles.buttonWrapper}>
           <TouchableOpacity
