@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   buttonWrapper: {
     justifyContent: "center",
-    padding: 40,
+    padding: 80,
   },
   button: {
     backgroundColor: "white",

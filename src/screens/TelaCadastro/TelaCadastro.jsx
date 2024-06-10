@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import * as yup from "yup";
 import TelaCadastroComponents from "../../components/TelaCadastroComponents/TelaCadastro";
 import { styles } from "./TelaCadastroStyle";
-import { useNavigation } from '@react-navigation/native';
-import { Provider, Dialog, Portal, Button, Paragraph } from 'react-native-paper';
+import { useNavigation } from "@react-navigation/native";
+import {
+  Provider,
+  Dialog,
+  Portal,
+  Button,
+  Paragraph,
+} from "react-native-paper";
+import { supabase } from "../../../supabase.js"; // Importando o cliente Supabase
 
 export default function TelaCadastro() {
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
+  const [data, setData] = useState([]);
 
   const schema = yup.object({
     nome: yup.string().required("Informe seu nome"),
@@ -34,10 +42,6 @@ export default function TelaCadastro() {
       .string()
       .min(6, "A senha deve ter no mínimo 6 caracteres")
       .required("Digite sua senha"),
-    confirmarSenha: yup
-      .string()
-      .oneOf([yup.ref("senha"), null], "As senhas devem ser iguais")
-      .required("Confirme sua senha"),
   });
 
   const {
@@ -53,18 +57,40 @@ export default function TelaCadastro() {
       cpf: "",
       cargo: "",
       senha: "",
-      confirmarSenha: "",
     },
   });
 
-  function handleSignIn(data) {
-    setVisible(true);
-  }
+  useEffect(() => {
+    // fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const { data } = await supabase.from("usuarios").select("*").eq();
+    setData(data);
+  };
+
+  const handleSignIn = async (formData) => {
+    const { error } = await supabase.from("usuarios").insert({
+      nome: formData.nome,
+      email: formData.email,
+      cargo: formData.cargo,
+      cpf: formData.cpf,
+      telefone: formData.telefone,
+      senha: formData.senha,
+    });
+
+    if (error) {
+      console.error(error);
+    } else {
+      setVisible(true);
+      fetchData(); // Atualiza a lista de dados após a inserção
+    }
+  };
 
   const hideDialog = () => {
     setVisible(false);
-    navigation.navigate('TelaLogin');
-  }
+    navigation.navigate("TelaLogin");
+  };
 
   return (
     <Provider>
@@ -120,7 +146,10 @@ export default function TelaCadastro() {
                 name="telefone"
                 render={({ field: { onChange, onBlur, value } }) => (
                   <TextInput
-                    style={[styles.input, errors.celular && styles.inputIfError]}
+                    style={[
+                      styles.input,
+                      errors.celular && styles.inputIfError,
+                    ]}
                     placeholder="Telefone"
                     onChangeText={onChange}
                     onBlur={onBlur}
@@ -198,31 +227,6 @@ export default function TelaCadastro() {
                 </Text>
               )}
             </View>
-
-            <View style={styles.formItem}>
-              <Controller
-                control={control}
-                name="confirmarSenha"
-                render={({ field: { onChange, onBlur, value } }) => (
-                  <TextInput
-                    style={[
-                      styles.input,
-                      errors.confirmarSenha && styles.inputIfError,
-                    ]}
-                    placeholder="Confirme a sua senha"
-                    onChangeText={onChange}
-                    secureTextEntry={true}
-                    onBlur={onBlur}
-                    value={value}
-                  />
-                )}
-              />
-              {errors.confirmarSenha && (
-                <Text style={styles.inputErrorMessage}>
-                  {errors.confirmarSenha?.message}
-                </Text>
-              )}
-            </View>
           </View>
 
           <View style={styles.buttonWrapper}>
@@ -234,7 +238,7 @@ export default function TelaCadastro() {
             </TouchableOpacity>
           </View>
         </View>
-        
+
         <Portal>
           <Dialog visible={visible} onDismiss={hideDialog}>
             <Dialog.Title>Cadastro Concluído</Dialog.Title>
