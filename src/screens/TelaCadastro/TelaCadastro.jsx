@@ -148,7 +148,7 @@ export default function TelaCadastro() {
                   <TextInput
                     style={[
                       styles.input,
-                      errors.celular && styles.inputIfError,
+                      errors.telefone && styles.inputIfError,
                     ]}
                     placeholder="Telefone"
                     onChangeText={onChange}

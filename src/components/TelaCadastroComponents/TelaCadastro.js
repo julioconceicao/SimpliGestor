@@ -1,5 +1,5 @@
 import { Image, StyleSheet, View } from "react-native";
-import logo from "../../assets/LogoSecundaria-removebg-preview (1).png";
+import logo from "../../assets/logo_azul_simpligestor.png";
 
 export default function TelaCadastroComponents() {
   return (
