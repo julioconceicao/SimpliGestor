@@ -65,7 +65,7 @@ const CalendarioComponent = () => {
 
   const handleTimeSelectionConfirm = (time) => {
     setModalVisible(false);
-    Alert.alert("Horário Comfirmado", `Você selecionou o horário ${time} para a data ${moment(selectedDate).format('DD [de] MMMM [de] YYYY')}`);
+    Alert.alert("Horário Confirmado", `Você selecionou o horário ${time} para a data ${moment(selectedDate).format('DD [de] MMMM [de] YYYY')}`);
     // Navegar para outra tela, por exemplo:
     // navigation.navigate('Details', { date: selectedDate, time });
   };
