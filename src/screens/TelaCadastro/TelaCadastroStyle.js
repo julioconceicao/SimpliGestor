@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "#3E5DFF",
+    backgroundColor: "#E8E8E8",
   },
   formWrapper: {
     flex: 1,
@@ -30,10 +30,11 @@ export const styles = StyleSheet.create({
   inputErrorMessage: {
     // eu recomendaria mudar alguma das cores, uma vez que o texto vermelho não fica muito bem visível
     color: "red",
+    fontSize: 14
   },
   buttonWrapper: {
     justifyContent: "center",
-    padding: 40,
+    padding: 80,
   },
   button: {
     backgroundColor: "white",
