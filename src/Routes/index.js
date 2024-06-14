@@ -201,7 +201,7 @@ export default function Routes() {
             }}
         >
 
-            <Tab.Screen
+<Tab.Screen
                 name='TabHomePage'
                 component={StackRoutes}
                 options={{
@@ -215,7 +215,6 @@ export default function Routes() {
                      //Remove nome do header                    
                 }}
             />
-
             <Tab.Screen
                 name='Calendario'
                 component={Calendario}
@@ -232,12 +231,10 @@ export default function Routes() {
                     ),
                 }}
             />
-
             <Tab.Screen
                 name='Financeiro'
                 component={Financeiro}
                 options={{
-
                     tabBarIcon: ({ color, size, focused }) => {
                         if (focused) {
                             return <FontAwesome name='dollar' size={50} color={color} />
@@ -252,8 +249,8 @@ export default function Routes() {
             />
 
             <Tab.Screen
-                name='TelaAgendar'
-                component={TelaAgendar}
+                name='Agendar'
+                component={Servicos}
                 options={{
                     tabBarIcon: ({ color, size, }) => (
                         <BottomTabAgendar />

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   container: {
     // essa margem é uma gambiarra, já que não vou mexer nas outras páginas
     // é provável que em algum dispositivo ela não funcione corretamente
-    marginTop: 26,
+    marginTop: 130,
     //
     height: 100,
     padding: 24,
