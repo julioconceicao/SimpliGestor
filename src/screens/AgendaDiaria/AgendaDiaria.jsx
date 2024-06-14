@@ -15,7 +15,7 @@ export default function AgendaDiaria() {
             <View style={styles.line} />
             <Text style={[styles.label, styles.info, styles.title]}>
               {" "}
-              Carlinhos Das Costas Dodois{" "}
+              Julio Conceição{" "}
             </Text>
             <Text style={[styles.label, styles.info]}> Quiropraxia </Text>
             <Text style={[styles.label, styles.info, styles.horario]}>
@@ -27,7 +27,7 @@ export default function AgendaDiaria() {
           <View style={styles.item}>
             <Text style={[styles.label, styles.info, styles.title]}>
               {" "}
-              Carlinhos Das Costas Dodois{" "}
+              Não Identificado{" "}
             </Text>
             <Text style={[styles.label, styles.info]}> Quiropraxia </Text>
             <Text style={[styles.label, styles.info, styles.horario]}>
@@ -40,7 +40,7 @@ export default function AgendaDiaria() {
           <View style={styles.item}>
             <Text style={[styles.label, styles.info, styles.title]}>
               {" "}
-              Carlinhos Das Costas Dodois{" "}
+              João Santos{" "}
             </Text>
             <Text style={[styles.label, styles.info]}> Massagem Relaxante </Text>
             <Text style={[styles.label, styles.info, styles.horario]}>
@@ -53,7 +53,7 @@ export default function AgendaDiaria() {
           <View style={styles.item}>
             <Text style={[styles.label, styles.info, styles.title]}>
               {" "}
-              Carlinhos Das Costas Dodois{" "}
+              Melry Cliente{" "}
             </Text>
             <Text style={[styles.label, styles.info]}> Massagem Relaxante </Text>
             <Text style={[styles.label, styles.info, styles.horario]}>
@@ -66,7 +66,7 @@ export default function AgendaDiaria() {
           <View style={styles.item}>
             <Text style={[styles.label, styles.info, styles.title]}>
               {" "}
-              Carlinhos Das Costas Dodois{" "}
+              Edvania Souza{" "}
             </Text>
             <Text style={[styles.label, styles.info]}> Massagem Relaxante </Text>
             <Text style={[styles.label, styles.info, styles.horario]}>
@@ -78,7 +78,7 @@ export default function AgendaDiaria() {
           <View style={styles.item}>
             <Text style={[styles.label, styles.info, styles.title]}>
               {" "}
-              Carlinhos Das Costas Dodois{" "}
+              Cláudia Gonçalves{" "}
             </Text>
             <Text style={[styles.label, styles.info]}> Day Spa 1 </Text>
             <Text style={[styles.label, styles.info, styles.horario]}>
