@@ -17,14 +17,8 @@ import { Servicos } from '../screens/Servicos/Servicos';
 import { Historico } from '../screens/Historico/Historico';
 import { Perfil } from '../screens/Perfil/Perfil';
 
-
-
-
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
-
-
 
 function StackRoutes() {
     const navigation = useNavigation();
@@ -36,8 +30,8 @@ function StackRoutes() {
                 headerTitleStyle: {
                     color: '#3E5DFF',
                     fontWeight: 'bold',
-
                 },
+
                 headerRight: () => ( 
                     <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>                 
                         <EvilIcons name='user' size={60} color={'#3E5DFF'} style={{ marginRight: 10 }}
@@ -45,9 +39,11 @@ function StackRoutes() {
                         />
                     </TouchableOpacity>
                 ),
+
                 headerStyle: {
                     backgroundColor: 'whitesmoke'
                 },
+
                 tabBarInactiveTintColor: '#3E5DFF',
                 tabBarShowLabel: false,
                 tabBarStyle: {
@@ -60,6 +56,7 @@ function StackRoutes() {
                     borderColor: 'grey',
                     borderWidth: 2,
                 },
+                
             }}
         >
 
@@ -159,7 +156,6 @@ function StackRoutes() {
         </Stack.Navigator>
     );
 }
-
 
 export default function Routes() {
     const navigation = useNavigation();
